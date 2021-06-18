@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import Weather_Assessment_UIKit
 
 class Weather_Assessment_UIKitTests: XCTestCase {
@@ -17,10 +18,14 @@ class Weather_Assessment_UIKitTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testExample() async throws {
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&&APPID=2593046034309e729a5b132ce36b8f10")!
+        
+        let weatherDataRaw = try await URLSession.shared.data(with: url)
+        
+        assert(weatherDataRaw.isEmpty)
     }
 
     func testPerformanceExample() throws {
