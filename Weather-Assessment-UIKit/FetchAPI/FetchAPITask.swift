@@ -6,10 +6,30 @@
 //
 import Foundation
 
+let decoder = JSONDecoder()
+
+//static init() {
+//  decoder.keyDecodingStrategy = AppConfig.keyDecodingStrategy
+//}
+
 func fetchAndDecode<D: Decodable>(url: URL) async throws -> D {
+  
+  do {
     let data = try await URLSession.shared.data(with: url)
-    let decodedData = try JSONDecoder().decode(D.self, from: data)
+    debugPrint(data)
+
+    //decoder.keyDecodingStrategy = AppConfig.keyDecodingStrategy
+  
+    let decodedData = try decoder.decode(D.self, from: data)
+    debugPrint(decodedData)
+    
     return decodedData
+    
+  } catch {
+    //completion(.failure(error))
+    debugPrint(error)
+    throw error
+  }
 }
 
 //func fetchAPI<D: Decodable>(url: URL) async throws -> D {

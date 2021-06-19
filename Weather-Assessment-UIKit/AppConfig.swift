@@ -15,6 +15,8 @@ enum AppConfig {
   static let token = URLQueryItem(name: "APPID", value: "2593046034309e729a5b132ce36b8f10")
   static let units = URLQueryItem(name: "units", value: "metric")
   
+  static let keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase
+  
   static func weatherUrl(city: String, state: String, country: String) -> URL? {
     return formUrl(endpoint: weatherEndpoint, city: city, state: state, country: country)
   }
@@ -25,10 +27,12 @@ enum AppConfig {
   
   private static func formUrl(endpoint: URL, city: String, state: String, country: String) -> URL? {
     var components = URLComponents(url: endpoint, resolvingAgainstBaseURL: false)!
-    let city = URLQueryItem(name:"q", value: "metric")
+    let city = URLQueryItem(name:"q", value: city)
     
     components.queryItems = [units, city, token]
     
-    return components.url
+    let url = components.url
+    debugPrint(url)
+    return url
   }
 }

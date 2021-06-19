@@ -22,6 +22,15 @@
 		3A657D0C267CCEE800E5E9A9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A657D0B267CCEE800E5E9A9 /* AppConfig.swift */; };
 		3A657D0D267CCEE800E5E9A9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A657D0B267CCEE800E5E9A9 /* AppConfig.swift */; };
 		3A657D0E267CCEE800E5E9A9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A657D0B267CCEE800E5E9A9 /* AppConfig.swift */; };
+		3A657D11267D108B00E5E9A9 /* CurrentLocalWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A657D10267D108B00E5E9A9 /* CurrentLocalWeather.swift */; };
+		3A657D12267D108B00E5E9A9 /* CurrentLocalWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A657D10267D108B00E5E9A9 /* CurrentLocalWeather.swift */; };
+		3A657D13267D108B00E5E9A9 /* CurrentLocalWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A657D10267D108B00E5E9A9 /* CurrentLocalWeather.swift */; };
+		3A98A6ED267E6260001D84DB /* NIOConcurrencyHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 3A98A6EC267E6260001D84DB /* NIOConcurrencyHelpers */; };
+		3A98A6EF267E6260001D84DB /* NIOFoundationCompat in Frameworks */ = {isa = PBXBuildFile; productRef = 3A98A6EE267E6260001D84DB /* NIOFoundationCompat */; };
+		3A98A6F2267E6589001D84DB /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 3A98A6F1267E6589001D84DB /* Files */; };
+		3A98A6F7267E6AD3001D84DB /* Pretoria.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A98A6F4267E6AD3001D84DB /* Pretoria.json */; };
+		3A98A6F8267E6AD3001D84DB /* London2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A98A6F5267E6AD3001D84DB /* London2.json */; };
+		3A98A6F9267E6AD3001D84DB /* London.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A98A6F6267E6AD3001D84DB /* London.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,10 @@
 		3A45102026739A7E00A6E6BC /* URLSession+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Async.swift"; sourceTree = "<group>"; };
 		3A45102526739B9700A6E6BC /* FetchAPITask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAPITask.swift; sourceTree = "<group>"; };
 		3A657D0B267CCEE800E5E9A9 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		3A657D10267D108B00E5E9A9 /* CurrentLocalWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocalWeather.swift; sourceTree = "<group>"; };
+		3A98A6F4267E6AD3001D84DB /* Pretoria.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Pretoria.json; path = "Weather-Assessment-UIKit/Models/samples/Pretoria.json"; sourceTree = SOURCE_ROOT; };
+		3A98A6F5267E6AD3001D84DB /* London2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = London2.json; path = "Weather-Assessment-UIKit/Models/samples/London2.json"; sourceTree = SOURCE_ROOT; };
+		3A98A6F6267E6AD3001D84DB /* London.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = London.json; path = "Weather-Assessment-UIKit/Models/samples/London.json"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A98A6F2267E6589001D84DB /* Files in Frameworks */,
+				3A98A6EF267E6260001D84DB /* NIOFoundationCompat in Frameworks */,
+				3A98A6ED267E6260001D84DB /* NIOConcurrencyHelpers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +123,7 @@
 		3A450FE12673638400A6E6BC /* Weather-Assessment-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A657D0F267D105100E5E9A9 /* Models */,
 				3A45102426739B2E00A6E6BC /* FetchAPI */,
 				3A45101F26739A4900A6E6BC /* Extensions */,
 				3A450FE22673638400A6E6BC /* AppDelegate.swift */,
@@ -124,6 +141,7 @@
 		3A450FF82673638700A6E6BC /* Weather-Assessment-UIKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				3A98A6F3267E6A8F001D84DB /* sample data */,
 				3A450FF92673638700A6E6BC /* Weather_Assessment_UIKitTests.swift */,
 			);
 			path = "Weather-Assessment-UIKitTests";
@@ -153,6 +171,24 @@
 			path = FetchAPI;
 			sourceTree = "<group>";
 		};
+		3A657D0F267D105100E5E9A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A657D10267D108B00E5E9A9 /* CurrentLocalWeather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A98A6F3267E6A8F001D84DB /* sample data */ = {
+			isa = PBXGroup;
+			children = (
+				3A98A6F6267E6AD3001D84DB /* London.json */,
+				3A98A6F5267E6AD3001D84DB /* London2.json */,
+				3A98A6F4267E6AD3001D84DB /* Pretoria.json */,
+			);
+			path = "sample data";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +205,11 @@
 			dependencies = (
 			);
 			name = "Weather-Assessment-UIKit";
+			packageProductDependencies = (
+				3A98A6EC267E6260001D84DB /* NIOConcurrencyHelpers */,
+				3A98A6EE267E6260001D84DB /* NIOFoundationCompat */,
+				3A98A6F1267E6589001D84DB /* Files */,
+			);
 			productName = "Weather-Assessment-UIKit";
 			productReference = 3A450FDF2673638400A6E6BC /* Weather-Assessment-UIKit.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +282,10 @@
 				Base,
 			);
 			mainGroup = 3A450FD62673638400A6E6BC;
+			packageReferences = (
+				3A98A6EB267E6260001D84DB /* XCRemoteSwiftPackageReference "swift-nio" */,
+				3A98A6F0267E6589001D84DB /* XCRemoteSwiftPackageReference "Files" */,
+			);
 			productRefGroup = 3A450FE02673638400A6E6BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,6 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A98A6F9267E6AD3001D84DB /* London.json in Resources */,
+				3A98A6F8267E6AD3001D84DB /* London2.json in Resources */,
+				3A98A6F7267E6AD3001D84DB /* Pretoria.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +335,7 @@
 				3A450FE72673638400A6E6BC /* ViewController.swift in Sources */,
 				3A657D0C267CCEE800E5E9A9 /* AppConfig.swift in Sources */,
 				3A45102126739A7E00A6E6BC /* URLSession+Async.swift in Sources */,
+				3A657D11267D108B00E5E9A9 /* CurrentLocalWeather.swift in Sources */,
 				3A450FE32673638400A6E6BC /* AppDelegate.swift in Sources */,
 				3A450FE52673638400A6E6BC /* SceneDelegate.swift in Sources */,
 				3A45102626739B9700A6E6BC /* FetchAPITask.swift in Sources */,
@@ -299,6 +348,7 @@
 			files = (
 				3A450FFA2673638700A6E6BC /* Weather_Assessment_UIKitTests.swift in Sources */,
 				3A657D0D267CCEE800E5E9A9 /* AppConfig.swift in Sources */,
+				3A657D12267D108B00E5E9A9 /* CurrentLocalWeather.swift in Sources */,
 				3A45102726739B9700A6E6BC /* FetchAPITask.swift in Sources */,
 				3A45102226739A7E00A6E6BC /* URLSession+Async.swift in Sources */,
 			);
@@ -309,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4510042673638700A6E6BC /* Weather_Assessment_UIKitUITests.swift in Sources */,
+				3A657D13267D108B00E5E9A9 /* CurrentLocalWeather.swift in Sources */,
 				3A657D0E267CCEE800E5E9A9 /* AppConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +707,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A98A6EB267E6260001D84DB /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		3A98A6F0267E6589001D84DB /* XCRemoteSwiftPackageReference "Files" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Files.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A98A6EC267E6260001D84DB /* NIOConcurrencyHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A98A6EB267E6260001D84DB /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOConcurrencyHelpers;
+		};
+		3A98A6EE267E6260001D84DB /* NIOFoundationCompat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A98A6EB267E6260001D84DB /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOFoundationCompat;
+		};
+		3A98A6F1267E6589001D84DB /* Files */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A98A6F0267E6589001D84DB /* XCRemoteSwiftPackageReference "Files" */;
+			productName = Files;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A450FD72673638400A6E6BC /* Project object */;
 }

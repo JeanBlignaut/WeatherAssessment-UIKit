@@ -10,29 +10,27 @@ import XCTest
 @testable import Weather_Assessment_UIKit
 
 class Weather_Assessment_UIKitTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+  func testDecodingWeatherData() async throws {
+    let bundle = Bundle(for: type(of: self))
+    
+    guard let url = bundle.url(forResource: "London", withExtension: "json") else {
+      XCTFail("Missing file: London.json")
+      return
     }
     
-    func testExample() async throws {
+    let jsonL = try Data(contentsOf: url)
+    
+    let weatherL = try JSONDecoder().decode(CurrentLocalWeather.self, from: json)
+    
+    XCTAssertEqual(weatherL.id, 2643743)
+    XCTAssertEqual(weatherL.weather[0].main, "Drizzle")
+  }
+  
+    func testCallWeatherAPIEndToEnd() async throws {
 
-        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&&APPID=2593046034309e729a5b132ce36b8f10")!
-        
-        let weatherDataRaw = try await URLSession.shared.data(with: url)
-        
-        assert(weatherDataRaw.isEmpty)
+      let weatherPTA : CurrentLocalWeather = try await fetchAndDecode(url: AppConfig.weatherUrl(city: "Pretoria", state: "GP", country: "ZA")!)
+      
+      XCTAssertTrue(weatherPTA.id != 0)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
