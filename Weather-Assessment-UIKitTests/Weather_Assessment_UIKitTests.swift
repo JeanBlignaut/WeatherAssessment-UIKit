@@ -19,12 +19,12 @@ class Weather_Assessment_UIKitTests: XCTestCase {
       return
     }
     
-    let jsonL = try Data(contentsOf: url)
+    let json = try Data(contentsOf: url)
     
-    let weatherL = try JSONDecoder().decode(CurrentLocalWeather.self, from: json)
+    let weather = try JSONDecoder().decode(CurrentLocalWeather.self, from: json)
     
-    XCTAssertEqual(weatherL.id, 2643743)
-    XCTAssertEqual(weatherL.weather[0].main, "Drizzle")
+    XCTAssertEqual(weather.id, 2643743)
+    XCTAssertEqual(weather.weather[0].main, "Drizzle")
   }
   
     func testCallWeatherAPIEndToEnd() async throws {
